@@ -700,7 +700,7 @@ EOF
             if [ ${COUNT} -gt 0 ]; then
                 CRON_CHECK=""
                 if [ -f ${ROOTDIR}etc/default/debsums ]; then
-                    CRON_CHECK=$(${GREPBINARY} CRON_CHECK /etc/default/debsums|${AWKBINARY} -F "=" '{print $2}')
+                    CRON_CHECK=$(${GREPBINARY} CRON_CHECK /etc/default/debsums | ${AWKBINARY} -F "=" '{print $2}' | ${TRBINARY} -d '"'\''')
                 fi
                 if [ "${CRON_CHECK}" = "daily" ] || [ "${CRON_CHECK}" = "weekly" ] || [ "${CRON_CHECK}" = "monthly" ]; then
                     LogText "Result: Cron job is configured for debsums utility."

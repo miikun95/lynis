@@ -3,6 +3,8 @@
 ## Lynis 3.1.8 (not released yet)
 
 ### Changed
+- AUTH-9230 - skip SHA_CRYPT rounds check when ENCRYPT_METHOD is YESCRYPT
+- PKGS-7370 - Strip quotes from CRON_CHECK in debsums test
 - Adjusted end-of-life entries in database: FreeBSD, OpenBSD
 - Fix for empty machine ID detection
 
